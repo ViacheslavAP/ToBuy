@@ -2,6 +2,8 @@ package ru.perelyginva.tobuy.presentation.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 import ru.perelyginva.tobuy.data.database.AppDatabase
 import ru.perelyginva.tobuy.data.model.ItemEntity
 import ru.perelyginva.tobuy.presentation.repository.ToByRepository
@@ -15,8 +17,10 @@ class ToByViewModel : ViewModel() {
     fun init(appDatabase: AppDatabase) {
         repository = ToByRepository(appDatabase)
 
-        val items = repository.getAllItems()
-        itemEntitiesLiveData.postValue(items)
+       viewModelScope.launch {
+           val items = repository.getAllItems()
+           itemEntitiesLiveData.postValue(items)
+       }
     }
 
     fun insertItem(itemEntity: ItemEntity) {
