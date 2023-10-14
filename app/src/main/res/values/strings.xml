@@ -2,4 +2,8 @@
     <string name="app_name">ToBuy</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello Home fragment</string>
+    <string name="title_here">Title Here</string>
+    <string name="descriptions_will_go_here_if_we_have_it">Descriptions will go here if we have it</string>
+    <string name="attention">!</string>
+
 </resources>
