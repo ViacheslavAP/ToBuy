@@ -5,5 +5,13 @@
     <string name="title_here">Title Here</string>
     <string name="descriptions_will_go_here_if_we_have_it">Descriptions will go here if we have it</string>
     <string name="attention">!</string>
+    <string name="title">Title</string>
+    <string name="descriptions">Descriptions</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="save">Save</string>
+    <string name="add_note">Add note</string>
+    <string name="required_field">Required field</string>
 
 </resources>

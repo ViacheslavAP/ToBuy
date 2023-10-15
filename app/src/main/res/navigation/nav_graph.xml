@@ -9,5 +9,14 @@
         android:id="@+id/homeFragment"
         android:name="ru.perelyginva.tobuy.presentation.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addItemEntityFragment"
+            app:destination="@id/addItemEntityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemEntityFragment"
+        android:name="ru.perelyginva.tobuy.presentation.AddItemEntityFragment"
+        android:label="AddItemEntityFragment"
+        tools:layout="@layout/fragment_add_item_entity"/>
 </navigation>

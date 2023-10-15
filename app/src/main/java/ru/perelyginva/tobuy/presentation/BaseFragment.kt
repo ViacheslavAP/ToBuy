@@ -6,7 +6,7 @@ import androidx.fragment.app.viewModels
 import ru.perelyginva.tobuy.data.database.AppDatabase
 import ru.perelyginva.tobuy.presentation.viewModel.ToByViewModel
 
-open class BaseFragment: Fragment() {
+open class BaseFragment : Fragment() {
 
     protected val mainActivity: MainActivity
         get() = activity as MainActivity
@@ -15,5 +15,15 @@ open class BaseFragment: Fragment() {
         get() = AppDatabase.getDatabase(requireActivity())
 
     protected val shareViewModel: ToByViewModel by activityViewModels()
+
+    //region navigation helper methods
+    protected fun navigationUp() {
+        mainActivity.navController.navigateUp()
+    }
+
+    protected fun navigateViaNavGraph(actionId: Int) {
+        mainActivity.navController.navigate(actionId)
+    }
+
 
 }

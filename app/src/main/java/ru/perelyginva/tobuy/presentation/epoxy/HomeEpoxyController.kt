@@ -1,5 +1,6 @@
 package ru.perelyginva.tobuy.presentation.epoxy
 
+import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.airbnb.epoxy.EpoxyController
@@ -30,7 +31,7 @@ class HomeEpoxyController (
     override fun buildModels() {
 
         if (isLoading) {
-            //todo loading states
+             LoadingEpoxyModel().id("loading_state").addTo(this)
             return
         }
 
@@ -67,6 +68,14 @@ class HomeEpoxyController (
             priorityTv.setOnClickListener {
                 itemEntityInterface.onBumpItemEntity(itemEntity)
             }
+
+           val colorRes = when(itemEntity.priority){
+                1 -> android.R.color.holo_green_light
+                2 -> android.R.color.holo_orange_light
+                3 -> android.R.color.holo_red_light
+               else -> R.color.teal_700
+            }
+            priorityTv.setBackgroundColor(ContextCompat.getColor(root.context,colorRes))
         }
     }
 }

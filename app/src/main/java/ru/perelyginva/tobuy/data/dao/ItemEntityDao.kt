@@ -10,11 +10,11 @@ import ru.perelyginva.tobuy.data.model.ItemEntity
 interface ItemEntityDao {
 
     @Query("SELECT * FROM item_entity")
-    fun getAllEntities(): List<ItemEntity>
+   suspend fun getAllEntities(): List<ItemEntity>
 
     @Insert
-    fun insert(itemEntity: ItemEntity)
+   suspend fun insert(itemEntity: ItemEntity)
 
     @Delete
-    fun delete(temEntity: ItemEntity)
+    suspend fun delete(temEntity: ItemEntity)
 }
